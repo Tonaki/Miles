@@ -22,15 +22,28 @@ public class GameController : SingletonMonoBehaviour< GameController >
 	}
 	
 	// Update is called once per frame
-	void Update () 
-	{
+    //void Update () 
+    //{
 
-		if( Input.GetMouseButtonDown( 0 ) ){
+    //    //if( Input.GetMouseButtonDown( 0 ) ){
 
-			hp -= 1;
+    //    //    hp -= 1;
 
-		}
+    //    //}
 
-	}
+    //}
+
+    void Damage( int damage )
+    {
+
+        hp -= damage;
+
+        if( hp < 0 ){
+
+            hp = 0;
+
+        }
+
+    }
 
 }

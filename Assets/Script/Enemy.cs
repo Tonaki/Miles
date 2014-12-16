@@ -40,13 +40,7 @@ public class Enemy : MonoBehaviour
 	void OnTriggerEnter( Collider col )
 	{
 
-		if( interval > Time.timeSinceLevelLoad ){
-
-			return;
-
-		}
-
-		if( maltiPoint == true ){
+		if( maltiPoint == true || interval > Time.timeSinceLevelLoad ){
 
 			return;
 
@@ -76,7 +70,7 @@ public class Enemy : MonoBehaviour
 
 		if( hp <= 0 ){
 
-			Destroy( gameObject, 4.0f );
+			Destroy( gameObject, 0.5f );
 
 		}
 

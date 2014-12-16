@@ -45,13 +45,13 @@ public class PlayerMove : MonoBehaviour
 
 		}
 
-		Debug.DrawLine( player.transform.position, agent.destination );
+        //Debug.DrawLine( player.transform.position, agent.destination );
 
-		Debug.DrawLine( player.transform.position, target[ targetNum ].transform.position, new Color( 0, 0, 255 ) );
+        //Debug.DrawLine( player.transform.position, target[ targetNum ].transform.position, new Color( 0, 0, 255 ) );
 
-		Debug.DrawLine( player.transform.position, Active.transform.position, new Color( 255, 0, 0 ) );
+        //Debug.DrawLine( player.transform.position, Active.transform.position, new Color( 255, 0, 0 ) );
 
-		Debug.Log( agent.hasPath );
+        //Debug.Log( agent.hasPath );
 
 		if( Vector3.Distance( player.transform.position,  target[ targetNum ].transform.position ) <= 2.0f ){
 
