@@ -20,11 +20,11 @@ public class Enemy : MonoBehaviour
 	void Start () 
 	{
 
-		if( efect != null ){
+        //if( efect != null ){
 
-			Instantiate( efect, gameObject.transform.position, efect.transform.rotation );
+        //    Instantiate( efect, gameObject.transform.position, efect.transform.rotation );
 
-		}
+        //}
 
 		player = GameObject.FindWithTag( "Player" );
 
@@ -56,7 +56,7 @@ public class Enemy : MonoBehaviour
 
 			}
 
-			interval = Time.timeSinceLevelLoad + 0.3f;
+			interval = Time.timeSinceLevelLoad + 0.5f;
 
 		}
 
@@ -70,7 +70,7 @@ public class Enemy : MonoBehaviour
 
 		if( hp <= 0 ){
 
-			Destroy( gameObject, 0.5f );
+			Destroy( gameObject, 1.0f );
 
 		}
 

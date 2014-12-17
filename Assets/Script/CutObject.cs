@@ -50,7 +50,7 @@ public class CutObject : MonoBehaviour
 
 			}
 
-			interval = Time.timeSinceLevelLoad + 0.3f;
+			interval = Time.timeSinceLevelLoad + 0.5f;
 
 		}
 

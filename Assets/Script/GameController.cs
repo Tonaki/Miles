@@ -6,9 +6,9 @@ using System.Collections;
 public class GameController : SingletonMonoBehaviour< GameController >
 {
 
-	public int hp = 100;
-
 	public int maxHp = 100;
+
+    public int hp = 100;
 
 
 	// Use this for initialization
@@ -17,30 +17,32 @@ public class GameController : SingletonMonoBehaviour< GameController >
 
 		DontDestroyOnLoad( this.gameObject );
 
-		maxHp = hp;
+		hp = maxHp;
 		
 	}
 	
 	// Update is called once per frame
-    //void Update () 
-    //{
+    void Update () 
+    {
 
-    //    //if( Input.GetMouseButtonDown( 0 ) ){
+        if( Input.GetKeyDown( KeyCode.Escape ) ){
 
-    //    //    hp -= 1;
+            Application.Quit();
 
-    //    //}
+        }
 
-    //}
+    }
 
     void Damage( int damage )
     {
 
         hp -= damage;
 
-        if( hp < 0 ){
+        if( hp <= 0 ){
 
-            hp = 0;
+            Application.LoadLevel( 0 );
+
+            hp = 100;
 
         }
 

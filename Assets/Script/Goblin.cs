@@ -72,10 +72,24 @@ public class Goblin : MonoBehaviour
 
             attackMode = true;
 
+            iTween.LookTo( gameObject, col.gameObject.transform.position, 1 );
+
         }
 
     }
-	
+
+
+    void OnTriggerStay( Collider col )
+    {
+
+        if( col.tag == "Player" ){
+
+	        iTween.LookTo( gameObject, col.gameObject.transform.position, 1 );
+
+        }
+
+    }
+
 
     void OnTriggerExit( Collider col )
     {
