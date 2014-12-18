@@ -9,7 +9,7 @@ public class Start : MonoBehaviour
     void OnDestroy()
     {
 
-        Application.LoadLevel( 1 );
+		gameObject.GetComponent< FCamera.Fade >().LoadLevel( 1 );
 
     }
 

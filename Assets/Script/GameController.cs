@@ -40,7 +40,7 @@ public class GameController : SingletonMonoBehaviour< GameController >
 
         if( hp <= 0 ){
 
-            Application.LoadLevel( 0 );
+			gameObject.GetComponent< FCamera.Fade >().LoadLevel( 0 );
 
             hp = 100;
 
