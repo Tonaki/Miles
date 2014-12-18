@@ -49,7 +49,7 @@ public class PlayerMove : MonoBehaviour
 
         //Debug.DrawLine( player.transform.position, target[ targetNum ].transform.position, new Color( 0, 0, 255 ) );
 
-        //Debug.DrawLine( player.transform.position, Active.transform.position, new Color( 255, 0, 0 ) );
+        Debug.DrawLine( player.transform.position, Active.transform.position, new Color( 255, 0, 0 ) );
 
         //Debug.Log( agent.hasPath );
 
@@ -86,6 +86,8 @@ public class PlayerMove : MonoBehaviour
 				agent.Stop();
 
 				Active = col.transform.gameObject;
+
+				iTween.LookTo( player, col.transform.gameObject.transform.position, 1.0f );
 
 				agent.SetDestination( Active.transform.position );
 

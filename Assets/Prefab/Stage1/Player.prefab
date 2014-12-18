@@ -681,7 +681,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &100088
 GameObject:
   m_ObjectHideFlags: 1
@@ -1279,8 +1279,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100088}
-  m_LocalRotation: {x: -.20465748, y: .941810727, z: -.00748957274, w: .266555578}
-  m_LocalPosition: {x: -.0710000023, y: .104000002, z: .0270000007}
+  m_LocalRotation: {x: -.164605379, y: .950158298, z: .0125221154, w: .26447618}
+  m_LocalPosition: {x: -.159999996, y: .0890000015, z: -.0270000007}
   m_LocalScale: {x: .25, y: .300000042, z: .299999952}
   m_Children:
   - {fileID: 400086}
@@ -1463,8 +1463,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.44571829, y: .353522927, z: .0639200881}
-  m_Center: {x: 2.50489402, y: -.00535562634, z: .0357261524}
+  m_Size: {x: 4.65950537, y: .353522897, z: .0639200881}
+  m_Center: {x: 2.61143136, y: -.00526292622, z: .0356475003}
 --- !u!81 &8100000
 AudioListener:
   m_ObjectHideFlags: 1
@@ -1721,7 +1721,7 @@ NavMeshAgent:
   m_AngularSpeed: 180
   m_StoppingDistance: 2.5
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 0
+  m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
