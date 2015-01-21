@@ -2485,8 +2485,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.65950537, y: .353522897, z: .0639200881}
-  m_Center: {x: 2.61143136, y: -.00526292622, z: .0356475003}
+  m_Size: {x: 8.1670475, y: .353522897, z: .0639200881}
+  m_Center: {x: 4.36510134, y: -.00521410117, z: .0356115252}
 --- !u!54 &1076213121
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4584,6 +4584,22 @@ Prefab:
       propertyPath: target.Array.data[0]
       value: 
       objectReference: {fileID: 861491864}
+    - target: {fileID: 6500000, guid: 0b596858043512640a0717569d8a2fad, type: 2}
+      propertyPath: m_Size.x
+      value: 8.1670475
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: 0b596858043512640a0717569d8a2fad, type: 2}
+      propertyPath: m_Center.x
+      value: 4.36510134
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: 0b596858043512640a0717569d8a2fad, type: 2}
+      propertyPath: m_Center.y
+      value: -.00521410117
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: 0b596858043512640a0717569d8a2fad, type: 2}
+      propertyPath: m_Center.z
+      value: .0356115252
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0b596858043512640a0717569d8a2fad, type: 2}
   m_RootGameObject: {fileID: 1380819492}
