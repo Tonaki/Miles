@@ -36,7 +36,6 @@ public class Enemy : MonoBehaviour
 	
 	}
 
-
 	void OnTriggerEnter( Collider col )
 	{
 
@@ -48,29 +47,24 @@ public class Enemy : MonoBehaviour
 
 		if( col.tag == "Wepon" ){
 
-			hp -= 1;
+            interval = Time.timeSinceLevelLoad + 0.5f;
 
-			if( hp <= 0 && gameObject.tag != "CutObject" ){
-
-				gameObject.tag = "CutObject";
-
-			}
-
-			interval = Time.timeSinceLevelLoad + 0.5f;
+			Damage( 1 );
 
 		}
 
 	}
 	
-
 	void Damage( int point )
 	{
 
 		hp -= point;
 
-		if( hp <= 0 ){
+		if( hp <= 0 && gameObject.tag != "CutObject" ){
 
-			Destroy( gameObject, 1.0f );
+            gameObject.tag = "CutObject";
+
+            //Destroy( gameObject, 1.0f );
 
 		}
 

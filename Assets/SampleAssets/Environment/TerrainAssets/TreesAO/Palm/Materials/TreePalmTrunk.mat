@@ -23,16 +23,16 @@ Material:
     m_Floats:
       data:
         first:
+          name: _SquashAmount
+        second: 1
+      data:
+        first:
           name: _BaseLight
         second: .349999994
       data:
         first:
           name: _AO
         second: 10
-      data:
-        first:
-          name: _SquashAmount
-        second: 1
     m_Colors:
       data:
         first:

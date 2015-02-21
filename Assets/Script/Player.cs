@@ -11,14 +11,12 @@ public class Player : MonoBehaviour
     private float delayTime = 0;
 
 
-
 	void Start() 
 	{
 
 		controller = GameObject.FindWithTag( "GameController" ).GetComponent< GameController >();
 	
 	}
-
 
     void Update()
     {
@@ -31,7 +29,6 @@ public class Player : MonoBehaviour
 
     }
 	
-
     void OnTriggerEnter( Collider col )
     {
 

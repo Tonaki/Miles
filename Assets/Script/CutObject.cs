@@ -15,7 +15,6 @@ public class CutObject : MonoBehaviour
 	private GameObject parent = null;
 
 
-
 	// Use this for initialization
 	void Start () 
 	{
@@ -23,7 +22,6 @@ public class CutObject : MonoBehaviour
 		parent = gameObject.transform.parent.gameObject;
 
 	}
-
 
 	void OnTriggerEnter( Collider col )
 	{
@@ -36,21 +34,32 @@ public class CutObject : MonoBehaviour
 
 		if( col.tag == "Wepon" ){
 
-			hp -= 1;
+            interval = Time.timeSinceLevelLoad + 0.5f;
 
 			if( breakPoint == false ){
 
 				parent.GetComponent< Enemy >().SendMessage( "Damage", 1 );
 
-			}
-
-			if( hp <= 0 && gameObject.tag != "CutObject" ){
-
-				gameObject.tag = "CutObject";
+                return;
 
 			}
 
-			interval = Time.timeSinceLevelLoad + 0.5f;
+            Damage( 1 );
+
+		}
+
+	}
+
+    void Damage( int point )
+	{
+
+		hp -= point;
+
+		if( hp <= 0 && gameObject.tag != "CutObject" ){
+
+            gameObject.tag = "CutObject";
+
+            //Destroy( gameObject, 1.0f );
 
 		}
 

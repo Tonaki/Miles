@@ -6,7 +6,7 @@ using System.Collections;
 public class Goblin : MonoBehaviour 
 {
 
-    private Animation animation = null;
+    private Animator animator;
 
     private bool attackMode = false;
 
@@ -14,37 +14,23 @@ public class Goblin : MonoBehaviour
 
     private float attackDelay = delay;
 
-
-
+    
 	// Use this for initialization
 	void Start() 
     {
 
-        animation = gameObject.GetComponent< Animation >();
-
-        animation.Play( "idle" );
-
-        animation[ "attack1" ].wrapMode = WrapMode.Once;
+        animator = gameObject.GetComponent< Animator >();
 
 	}
-
 
     void Update()
     {
 
-        if( attackMode == true ){
+        if( animator.GetBool( "AttakMode" ) == true ){
 
-            if( animation.IsPlaying( "idle" ) ){
+            if( attackDelay <= Random.Range( 0, ( int )delay - 2 ) ){
 
-                animation.CrossFade( "combat_idle" );
-
-            }
-
-            if( attackDelay <= Random.Range( 0, delay - 2.0f ) ){
-
-                animation.CrossFade( "attack1" );
-
-                animation.CrossFadeQueued( "combat_idle" );
+                animator.SetTrigger( "Attak" );
 
                 attackDelay = delay;
 
@@ -52,32 +38,22 @@ public class Goblin : MonoBehaviour
 
             attackDelay -= Time.deltaTime;
 
-        }else{
-
-            if( animation.IsPlaying( "combat_idle" ) ){
-            
-                animation.CrossFade( "idle" );
-            
-            }
-
         }
 
     }
-
 
     void OnTriggerEnter( Collider col )
     {
 
         if( col.tag == "Player" ){
 
-            attackMode = true;
+            animator.SetTrigger( "AttakMode" );
 
             iTween.LookTo( gameObject, col.gameObject.transform.position, 1 );
 
         }
 
     }
-
 
     void OnTriggerStay( Collider col )
     {
@@ -90,13 +66,12 @@ public class Goblin : MonoBehaviour
 
     }
 
-
     void OnTriggerExit( Collider col )
     {
 
         if( col.tag == "Player" ){
 
-            attackMode = false;
+            animator.SetTrigger( "IdleMode" );
 
             attackDelay = delay;
 

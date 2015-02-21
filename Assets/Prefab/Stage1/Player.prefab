@@ -521,9 +521,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400066}
+  - 54: {fileID: 5400004}
   - 135: {fileID: 13500000}
   - 114: {fileID: 11400012}
-  - 54: {fileID: 5400004}
   m_Layer: 11
   m_Name: SearchArea
   m_TagString: Untagged
@@ -1306,7 +1306,7 @@ Camera:
   far clip plane: 1000
   field of view: 45
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 1
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1463,8 +1463,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.65950537, y: .353522897, z: .0639200881}
-  m_Center: {x: 2.61143136, y: -.00526292622, z: .0356475003}
+  m_Size: {x: 8.1670475, y: .353522897, z: .0639200881}
+  m_Center: {x: 4.36510134, y: -.00521410117, z: .0356115252}
 --- !u!81 &8100000
 AudioListener:
   m_ObjectHideFlags: 1

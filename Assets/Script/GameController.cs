@@ -6,9 +6,12 @@ using System.Collections;
 public class GameController : SingletonMonoBehaviour< GameController >
 {
 
-	public int maxHp = 100;
+    [SerializeField]
+	private int maxHp = 100;
 
-    public int hp = 100;
+    private int hp;
+    
+    private HPGauge hpGauge;
 
 
 	// Use this for initialization
@@ -17,7 +20,7 @@ public class GameController : SingletonMonoBehaviour< GameController >
 
 		DontDestroyOnLoad( this.gameObject );
 
-		hp = maxHp;
+        HpInit();
 		
 	}
 	
@@ -25,24 +28,49 @@ public class GameController : SingletonMonoBehaviour< GameController >
     void Update () 
     {
 
-        if( Input.GetKeyDown( KeyCode.Escape ) ){
+        if ( Input.GetKeyDown( KeyCode.Escape ) ){
 
             Application.Quit();
 
         }
+        
+    }
+
+    void HpInit()
+    {
+
+        hp = maxHp;
 
     }
 
-    void Damage( int damage )
+    void GameOver()
+    {
+
+        gameObject.GetComponent<FCamera.Fade>().LoadLevel(0);
+
+        HpInit();
+
+    }
+
+    public void AddHpGauge( HPGauge gauge )
+    {
+
+        hpGauge = gauge;
+
+    }
+
+    public void Damage( int damage )
     {
 
         hp -= damage;
 
+        hpGauge.HpGaugeUpdate( ( float )hp / maxHp );
+
+        hpGauge.HitAnimation();
+
         if( hp <= 0 ){
 
-			gameObject.GetComponent< FCamera.Fade >().LoadLevel( 0 );
-
-            hp = 100;
+            GameOver();
 
         }
 

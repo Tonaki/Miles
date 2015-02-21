@@ -6,7 +6,8 @@ using System.Collections;
 public class PlayerMove : MonoBehaviour 
 {
 
-	public GameObject[] target = null;
+    [SerializeField]
+	private GameObject[] target = null;
 
 	private int targetNum = 0;
 
@@ -53,11 +54,11 @@ public class PlayerMove : MonoBehaviour
 
         //Debug.Log( agent.hasPath );
 
-		if( Vector3.Distance( player.transform.position,  target[ targetNum ].transform.position ) <= 2.0f ){
+		if( Vector3.Distance( player.transform.position, target[ targetNum ].transform.position ) <= 2.0f ){
 
 			agent.Stop();
 
-			if( targetNum < target.Length ){
+			if( targetNum + 1 < target.Length ){
 
 				targetNum += 1;
 
@@ -77,17 +78,15 @@ public class PlayerMove : MonoBehaviour
 
 		if( col.transform.gameObject.tag == "Enemy" ){
 
-			float playerToActiveTarget = Vector3.Distance( player.transform.position, Active.transform.position );
-
 			float playerToEnemy = Vector3.Distance( player.transform.position, col.transform.gameObject.transform.position );
 
-			if( playerToActiveTarget > playerToEnemy ){
+			if( agent.remainingDistance > playerToEnemy ){
 
 				agent.Stop();
 
 				Active = col.transform.gameObject;
 
-				iTween.LookTo( player, col.transform.gameObject.transform.position, 1.0f );
+                //iTween.LookTo( player, col.transform.gameObject.transform.position, 1.0f );
 
 				agent.SetDestination( Active.transform.position );
 

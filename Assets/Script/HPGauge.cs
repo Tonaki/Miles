@@ -6,7 +6,8 @@ public class HPGauge : MonoBehaviour
 
 	private GameController controller;
 
-	private float hpScale = 1.0f;
+    private Animator animator;
+
 
 	// Use this for initialization
 	void Start () 
@@ -14,28 +15,30 @@ public class HPGauge : MonoBehaviour
 
 		controller = GameObject.FindWithTag( "GameController" ).GetComponent< GameController >();
 
-		hpScale = ( float )controller.hp / controller.maxHp;
-	
+        controller.AddHpGauge( gameObject.GetComponent< HPGauge >() );
+
+        animator = gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent< Animator >();
+	    
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
 
-		if( hpScale != ( float )controller.hp / controller.maxHp ){
-
-			hpScale = ( float )controller.hp / controller.maxHp;
-			
-			Vector3 buf;
-			
-			buf.x = hpScale;
-			buf.y = gameObject.transform.localScale.y;
-			buf.z = gameObject.transform.localScale.z;
-			
-			gameObject.transform.localScale = buf;
-
-		}
-	
 	}
+
+    public void HpGaugeUpdate( float hpScall )
+    {
+
+        gameObject.transform.localScale = new Vector3( hpScall, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+
+    }
+
+    public void HitAnimation()
+    {
+
+        animator.SetTrigger("Damage");
+
+    }
 
 }
