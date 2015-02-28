@@ -10,6 +10,8 @@ public class GameController : SingletonMonoBehaviour< GameController >
 	private int maxHp = 100;
 
     private int hp;
+
+    private AudioController audio;
     
     private HPGauge hpGauge;
 
@@ -52,6 +54,13 @@ public class GameController : SingletonMonoBehaviour< GameController >
 
     }
 
+    public void AddAudio( AudioController audioController )
+    {
+
+        audio = audioController;
+
+    }
+
     public void AddHpGauge( HPGauge gauge )
     {
 
@@ -73,6 +82,20 @@ public class GameController : SingletonMonoBehaviour< GameController >
             GameOver();
 
         }
+
+    }
+
+    public void PlayBGM( int num )
+    {
+
+        audio.PlayBGM( num );
+
+    }
+
+    public void PlayBGM( int num, ulong time )
+    {
+
+        audio.PlayBGM( num, time );
 
     }
 
