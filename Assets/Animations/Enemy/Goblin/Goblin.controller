@@ -38,17 +38,6 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
-  - serializedVersion: 3
-    m_Name: New Layer
-    m_StateMachine: {fileID: 110710342}
-    m_Mask: {fileID: 101100000, guid: c67f832f29c9a1a4d90da2f2024effcd, type: 2}
-    m_BlendingMode: 0
-    m_SyncedLayerIndex: -1
-    m_StateMachineMotionSetIndex: 0
-    m_DefaultWeight: 1
-    m_IKPass: 0
-    m_SyncedLayerAffectsTiming: 0
-    m_Controller: {fileID: 9100000}
 --- !u!206 &20607888
 BlendTree:
   m_ObjectHideFlags: 3
@@ -84,7 +73,7 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110276058}
   m_DstState: {fileID: 110279752}
-  m_TransitionDuration: 0
+  m_TransitionDuration: .23443526
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
@@ -115,6 +104,46 @@ Transition:
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
+--- !u!1101 &110136674
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110268616}
+  m_DstState: {fileID: 110276058}
+  m_TransitionDuration: .00179076195
+  m_TransitionOffset: .402974963
+  m_Conditions:
+  - m_ConditionMode: 5
+    m_ConditionEvent: Attak
+    m_EventTreshold: 0
+    m_ExitTime: 1
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
+--- !u!1101 &110148568
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110276058}
+  m_DstState: {fileID: 110268616}
+  m_TransitionDuration: .100000001
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: Attak
+    m_EventTreshold: 0
+    m_ExitTime: .899999976
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
 --- !u!1101 &110175130
 Transition:
   serializedVersion: 2
@@ -135,46 +164,6 @@ Transition:
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
---- !u!1101 &110176014
-Transition:
-  serializedVersion: 2
-  m_ObjectHideFlags: 3
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_SrcState: {fileID: 110287656}
-  m_DstState: {fileID: 110290710}
-  m_TransitionDuration: .214285478
-  m_TransitionOffset: 0
-  m_Conditions:
-  - m_ConditionMode: 5
-    m_ConditionEvent: 
-    m_EventTreshold: 0
-    m_ExitTime: .785714507
-  m_Atomic: 1
-  m_Solo: 0
-  m_Mute: 0
-  m_CanTransitionToSelf: 0
---- !u!1101 &110181912
-Transition:
-  serializedVersion: 2
-  m_ObjectHideFlags: 3
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_SrcState: {fileID: 110290710}
-  m_DstState: {fileID: 110287656}
-  m_TransitionDuration: 0
-  m_TransitionOffset: 0
-  m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Attak
-    m_EventTreshold: 0
-    m_ExitTime: .899999976
-  m_Atomic: 1
-  m_Solo: 0
-  m_Mute: 0
-  m_CanTransitionToSelf: 0
 --- !u!1101 &110188004
 Transition:
   serializedVersion: 2
@@ -184,7 +173,7 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110279752}
   m_DstState: {fileID: 110276058}
-  m_TransitionDuration: 0
+  m_TransitionDuration: .229508102
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
@@ -208,6 +197,21 @@ State:
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 93, y: 125, z: 0}
   m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110268616
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Attak
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400020, guid: 2de911d45fd8d124c90453569b0194ca, type: 3}
+  m_ParentStateMachine: {fileID: 110700000}
+  m_Position: {x: 228, y: 60, z: 0}
+  m_IKOnFeet: 1
   m_Mirror: 0
   m_Tag: 
 --- !u!1102 &110276058
@@ -240,36 +244,6 @@ State:
   m_IKOnFeet: 1
   m_Mirror: 0
   m_Tag: 
---- !u!1102 &110287656
-State:
-  m_ObjectHideFlags: 3
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Attak
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Motions:
-  - {fileID: 7400000, guid: bd0969f4a481ea74abf99cda28e242ee, type: 3}
-  m_ParentStateMachine: {fileID: 110710342}
-  m_Position: {x: 36, y: 96, z: 0}
-  m_IKOnFeet: 0
-  m_Mirror: 0
-  m_Tag: 
---- !u!1102 &110290710
-State:
-  m_ObjectHideFlags: 3
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: DefaultState
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Motions:
-  - {fileID: 0}
-  m_ParentStateMachine: {fileID: 110710342}
-  m_Position: {x: 36, y: 12, z: 0}
-  m_IKOnFeet: 0
-  m_Mirror: 0
-  m_Tag: 
 --- !u!1107 &110700000
 StateMachine:
   serializedVersion: 2
@@ -281,9 +255,19 @@ StateMachine:
   m_States:
   - {fileID: 110279752}
   - {fileID: 110276058}
+  - {fileID: 110268616}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
+    data:
+      first: {fileID: 110268616}
+      second:
+      - {fileID: 110136674}
+    data:
+      first: {fileID: 110276058}
+      second:
+      - {fileID: 110119560}
+      - {fileID: 110148568}
     data:
       first: {fileID: 0}
       second: []
@@ -291,35 +275,6 @@ StateMachine:
       first: {fileID: 110279752}
       second:
       - {fileID: 110188004}
-    data:
-      first: {fileID: 110276058}
-      second:
-      - {fileID: 110119560}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: -204, y: -24, z: 0}
-  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
---- !u!1107 &110710342
-StateMachine:
-  serializedVersion: 2
-  m_ObjectHideFlags: 3
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: New Layer
-  m_DefaultState: {fileID: 110290710}
-  m_States:
-  - {fileID: 110287656}
-  - {fileID: 110290710}
-  m_ChildStateMachine: []
-  m_ChildStateMachinePosition: []
-  m_OrderedTransitions:
-    data:
-      first: {fileID: 110290710}
-      second:
-      - {fileID: 110181912}
-    data:
-      first: {fileID: 110287656}
-      second:
-      - {fileID: 110176014}
-  m_MotionSetCount: 1
-  m_AnyStatePosition: {x: -144, y: 12, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

@@ -26,6 +26,20 @@ public class Goblin : MonoBehaviour
     void Update()
     {
 
+        if( animator.GetBool( "AttakMode" ) == true ){
+
+            if( attackDelay <= Random.Range( 0, ( int )delay - 2 ) ){
+
+                animator.SetTrigger( "Attak" );
+
+                attackDelay = delay;
+
+            }
+
+            attackDelay -= Time.deltaTime;
+
+        }
+
     }
 
     void OnTriggerEnter( Collider col )
@@ -46,17 +60,7 @@ public class Goblin : MonoBehaviour
 
         if( col.tag == "Player" ){
 
-            iTween.LookTo( gameObject, col.gameObject.transform.position, 1 );
-
-            if( attackDelay <= Random.Range( 0, ( int )delay - 2 ) ){
-
-                animator.SetTrigger( "Attak" );
-
-                attackDelay = delay;
-
-            }
-
-            attackDelay -= Time.deltaTime;
+	        iTween.LookTo( gameObject, col.gameObject.transform.position, 1 );
 
         }
 

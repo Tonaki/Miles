@@ -695,9 +695,7 @@ GameObject:
   - 54: {fileID: 5400000}
   - 65: {fileID: 6500000}
   - 114: {fileID: 11400014}
-  - 114: {fileID: 11479566}
-  - 82: {fileID: 8279566}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Medieval Sward
   m_TagString: Wepon
   m_Icon: {fileID: 0}
@@ -1281,8 +1279,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100088}
-  m_LocalRotation: {x: -.121906042, y: .95657438, z: .0243489593, w: .263650507}
-  m_LocalPosition: {x: -.157000005, y: .0970000029, z: -.0370000005}
+  m_LocalRotation: {x: -.164605379, y: .950158298, z: .0125221154, w: .26447618}
+  m_LocalPosition: {x: -.159999996, y: .0890000015, z: -.0270000007}
   m_LocalScale: {x: .25, y: .300000042, z: .299999952}
   m_Children:
   - {fileID: 400086}
@@ -1474,64 +1472,6 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
---- !u!82 &8279566
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100088}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 9f65abe4dfd0d734a8049454be29b0e5, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!92 &9200000
 Behaviour:
   m_ObjectHideFlags: 1
@@ -1676,18 +1616,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interval: .0829999968
---- !u!114 &11479566
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19fc145bd3b5ec9449e918077658ef63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack: 0
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

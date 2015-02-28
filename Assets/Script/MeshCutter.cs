@@ -20,6 +20,7 @@ public class MeshCutter : MonoBehaviour
 	public delegate void CutMeshDelegate( GameObject newObj, GameObject baseObj );
 	public CutMeshDelegate cutObjectHandle = null;
 
+	
 
 	void Start()
 	{

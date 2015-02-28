@@ -9,22 +9,12 @@ public class Spone : MonoBehaviour
 
 	public Vector3 popPosition;
 
-    private GameController controller;
 
-
-    void Start () 
-    {
-
-        controller = GameObject.FindWithTag( "GameController" ).GetComponent< GameController >();
-
-    }
 
 	void OnTriggerEnter( Collider col )
 	{
 
 		if( popEnemy != null ){
-
-            controller.PlayBGM( 2 );
 
 			Instantiate( popEnemy, popPosition, popEnemy.transform.rotation );
 

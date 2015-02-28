@@ -64,7 +64,7 @@ public class Enemy : MonoBehaviour
 
             gameObject.tag = "CutObject";
 
-            Destroy( gameObject, 5.0f );
+            //Destroy( gameObject, 1.0f );
 
 		}
 
